@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <main class="fundo">
+      <form class="filtro">
+        <div class="centro">
+          <img class="logo" src="./image/Logo.png" alt="imagem do logo" />
+          <div class="caixa-input">
+            <input type="text" placeholder="E-mail" />
+            <img src="./image/Grupo 37.png" alt="logo do email" />
+          </div>
+          <div class="caixa-input">
+            <input type="password" placeholder="Senha" />
+            <img src="./image/Grupo 36.png" alt="logo do email" />
+          </div>
+          <div class="caixa-link">
+            <a href="#">Esqueci minha senha</a>
+          </div>
+          <button onclick="handleButtonClick()">entrar</button>
+        </div>
+      </form>
+    </main>
+    <script>
+      function handleButtonClick() {
+        event.preventDefault();
+        let campos = document.getElementsByTagName("input");
+        let [email, senha] = campos;
+        submit(email.value, senha.value);
+      }
+
+      async function submit(email, senha) {
+        console.log("email", email);
+        console.log("senha", senha);
+        try {
+          const resposta = await fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, senha }),
+          });
+
+          // Verifica se a resposta foi bem-sucedida (status 2xx)
+          if (resposta.ok) {
+            const corpoResposta = await resposta.json();
+            alert(corpoResposta.mensagem);
+            console.log(corpoResposta);
+          } else {
+            const corpoResposta = await resposta.json();
+
+            /*  console.error(
+              "Erro na requisição:",
+              resposta.status,
+              resposta.statusText
+            ); */
+
+            console.log("Erro na requisição: ", corpoResposta.mensagem);
+          }
+        } catch (erro) {
+          console.error("Erro na requisição:", erro);
+        }
+      }
+    </script>
+  </body>
+</html>

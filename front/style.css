@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font: normal normal bold 14px/19px Roboto;
+}
+
+.fundo {
+    width: 100vw;
+    height: 100vh;
+    font-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("./image/emil-widlund-xrbbXIXAWY0-unsplash@2x.png");
+}
+
+.filtro {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #343a40cb;
+}
+
+.centro {
+    width: 433px;
+    display: flex;
+    height: 446px;
+    padding: 40px;
+    border-radius: 8px;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: 1px solid #70707040;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    height: 48px;
+    margin-top: 40px;
+    margin-bottom: 22px;
+    font-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    width: 100%;
+    height: 51px;
+    background-color: #F1F3F5;
+    border: 0px solid #70707040;
+}
+
+input:focus {
+    outline: 0;
+    border: 0 none;
+    box-shadow: 0 0 0 0;
+}
+
+.caixa-input {
+    width: 100%;
+    height: 51px;
+    display: flex;
+    padding: 0px 8px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    background-color: #F1F3F5;
+    border: 0px solid #70707040;
+}
+
+.caixa-input img {
+    width: 17px;
+    height: 15px;
+    font-size: cover;
+    justify-content: center;
+}
+
+.caixa-link {
+    width: 100%;
+    display: flex;
+}
+
+a {
+    color: #000000;
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    cursor: pointer;
+    font-weight: 800;
+    border-radius: 4px;
+    text-transform: uppercase;
+    border: 1px solid #FFC501;
+    background-color: #FFC501;
+}
